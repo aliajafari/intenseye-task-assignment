@@ -1,3 +1,5 @@
+import _ = require('lodash');
+
 interface IArticle {
     id: number
     title: string
