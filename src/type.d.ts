@@ -1,3 +1,5 @@
+declare module "lodash";
+
 interface IArticle {
     id: number
     title: string

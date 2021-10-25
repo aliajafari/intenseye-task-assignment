@@ -1,10 +1,11 @@
+
 import React, { useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import Table from './components/Table'
 import { useSelector, useDispatch } from "react-redux"
 import { getRepositories, setKeyword, setLanguage } from "./store/actionCreators"
 import { Dispatch } from "redux"
-const _: any = require('lodash');
+import * as _ from "lodash";
 
 import LoadingGif from './styles/images/loading.gif'
 import './styles/styles.scss'
