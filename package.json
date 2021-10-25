@@ -13,7 +13,6 @@
     "axios": "^0.23.0",
     "lodash": "^4.17.21",
     "node-sass": "^6.0.1",
-    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
@@ -29,12 +28,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -52,8 +45,6 @@
     "@types/lodash": "^4.14.176",
     "@types/react-redux": "^7.1.20",
     "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.1.0",
-    "@typescript-eslint/parser": "^5.1.0"
+    "@types/redux-thunk": "^2.1.0"
   }
 }
