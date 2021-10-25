@@ -1,0 +1,27 @@
+.header {
+    background: darken(white, 3%);
+    padding: 10px;
+    min-height: 40px;
+    border-bottom: 1px solid darken(white,10px);
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid darken(white,13%);
+    outline: none;
+    margin-left: 5px;
+    &:focus {
+        border-color: darken(white,20%);
+    }
+}
+
+input[type=text] {
+    width: 200px;
+}
+
+.label {
+    margin: 5px;
+    display: inline-block;
+}

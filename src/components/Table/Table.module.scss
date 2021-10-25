@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    th,
+    td {
+        text-align: left;
+        padding: 15px;
+        border-bottom: 1px solid darken(white, 15%);
+    }
+
+    tr {
+        &:nth-child(2n+1) {
+            background: darken(white,4%);
+        }
+    }
+}
+
+.tableHeader {
+    background: darken(white,20%) !important;
+}
+
+.RepoDescription {
+    width: 220px;
+}
