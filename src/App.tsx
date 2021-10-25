@@ -4,7 +4,7 @@ import Table from './components/Table'
 import { useSelector, useDispatch } from "react-redux"
 import { getRepositories, setKeyword, setLanguage } from "./store/actionCreators"
 import { Dispatch } from "redux"
-import _ from 'lodash';
+import * as _ from 'lodash';
 import LoadingGif from './styles/images/loading.gif'
 import './styles/styles.scss'
 
