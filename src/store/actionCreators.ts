@@ -1,6 +1,5 @@
 import { getRepositoriesRequest } from "../requests/repositories"
 import * as actionTypes from "./actionTypes"
-import qs from 'query-string'
 
 // GET REPOSITORIES
 export const setLoading = (payload: any): any => {
