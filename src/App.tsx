@@ -9,7 +9,6 @@ import * as _ from "lodash";
 
 import LoadingGif from './styles/images/loading.gif'
 import './styles/styles.scss'
-import { RepositoryState } from './type'
 
 function App() {
 

@@ -1,5 +1,4 @@
 import { getRepositoriesRequest } from "../requests/repositories"
-import { DataAction, KeywordAction, LanguageAction, LoadingAction, RepositoryState } from "../type"
 import * as actionTypes from "./actionTypes"
 
 // GET REPOSITORIES

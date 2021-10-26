@@ -1,4 +1,3 @@
-import { RepositoryState } from "../type"
 import * as actionTypes from "./actionTypes"
 
 const initialState: RepositoryState = {

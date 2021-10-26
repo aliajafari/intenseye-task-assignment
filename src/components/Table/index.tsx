@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styles from './Table.module.scss';
-import { TableType } from '../../type';
 
 function Table({ rows }: TableType) {
     return (

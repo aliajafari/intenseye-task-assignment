@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 import styles from "./Header.module.scss";
-import { HeaderType } from "../../type";
+
 
 function Header({
 	languages,
