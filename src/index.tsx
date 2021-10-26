@@ -7,9 +7,11 @@ import thunk from "redux-thunk"
 import App from "./App"
 import reducer from "./store/reducer"
 
-const store: Store<ArticleState, ArticleAction> & {
-  dispatch: DispatchType
+const store: Store<any, any> & {
+  dispatch: any
 } = createStore(reducer, applyMiddleware(thunk))
+
+console.log('store',store)
 
 const rootElement = document.getElementById("root")
 render(

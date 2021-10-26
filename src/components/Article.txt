@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
+import { IArticle } from "../type"
 
 type Props = {
   article: IArticle

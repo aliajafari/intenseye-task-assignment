@@ -1,8 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styles from './Table.module.scss';
+import { TableType } from '../../type';
 
-function Table({ rows }: any) {
+function Table({ rows }: TableType) {
     return (
         <table className={styles.table}>
             <thead>
@@ -18,7 +19,7 @@ function Table({ rows }: any) {
             <tbody>
                 {rows.map((item: any) => {
                     const updateDate = new Date(item.updated_at)
-                    const options: any = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+                    const options: any = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                     updateDate.toLocaleDateString(undefined, options)
                     return (
                         <tr key={item.id}>

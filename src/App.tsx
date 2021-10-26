@@ -9,10 +9,11 @@ import * as _ from "lodash";
 
 import LoadingGif from './styles/images/loading.gif'
 import './styles/styles.scss'
+import { RepositoryState } from './type'
 
 function App() {
 
-  const repositories: any = useSelector((state: any) => state)
+  const repositories = useSelector((state: RepositoryState) => state)
   const { loading, data, keyword, languages, selectedLanguage } = repositories
 
   const dispatch: Dispatch<any> = useDispatch()
@@ -41,7 +42,6 @@ function App() {
     getRepos()
   }
 
-  console.log(loading)
   return (
     <div className='container'>
       <Header
@@ -53,7 +53,7 @@ function App() {
       />
       <div className='table-container'>
         {loading && <div className={`loading`}>
-          <div><img src={LoadingGif} /></div>
+          <div><img alt='loading' src={LoadingGif} /></div>
         </div>}
         <Table rows={data} />
       </div>
