@@ -7,3 +7,4 @@ export const SET_REPOS = "SET_REPOS"
 export const SET_LOADING = 'SET_LOADING'
 export const SET_KEYWORD = 'SET_KEYWORD'
 export const SET_LANGUAGE = 'SET_LANGUAGE'
+export const SET_QUERYSTRING = 'SET_QUERYSTRING'

@@ -1,5 +1,6 @@
 import { getRepositoriesRequest } from "../requests/repositories"
 import * as actionTypes from "./actionTypes"
+import queryString from 'querystring';
 
 // GET REPOSITORIES
 export const setLoading = (payload: boolean): LoadingAction => {
@@ -23,7 +24,6 @@ export const setLanguage = (payload: string): LanguageAction => {
   }
 }
 
-
 export const setData = (payload: Array<any>): DataAction => {
   return {
     type: actionTypes.SET_REPOS,
@@ -31,38 +31,22 @@ export const setData = (payload: Array<any>): DataAction => {
   }
 }
 
+export const setQueryString = (payload: any): any => {
+  return {
+    type: actionTypes.SET_QUERYSTRING,
+    payload
+  }
+}
+
 export const getRepositories = () => {
   return async (dispatch: (args: LoadingAction | DataAction) => LoadingAction | DataAction, state: () => RepositoryState) => {
     const query = state().selectedLanguage + (state().keyword !== '' ? `+${state().keyword}` : '')
+    state().queryString.q = query
+    const q = queryString.stringify(state().queryString)
     dispatch(setLoading(true))
-    await getRepositoriesRequest(query).then((res): void => {
-      dispatch(setData(res.data.items))
+    await getRepositoriesRequest(q).then((res): void => {
+      dispatch(setData(res.data))
       dispatch(setLoading(false))
     })
   }
 }
-
-
-// /////////////////////////////////////////
-// export function addArticle(article: IArticle) {
-//   const action: ArticleAction = {
-//     type: actionTypes.ADD_ARTICLE,
-//     article,
-//   }
-//   return simulateHttpRequest(action)
-// }
-
-// export function removeArticle(article: IArticle) {
-//   const action: ArticleAction = {
-//     type: actionTypes.REMOVE_ARTICLE,
-//     article,
-//   }
-//   return simulateHttpRequest(action)
-// }
-// export function simulateHttpRequest(action: ArticleAction) {
-//   return (dispatch: DispatchType) => {
-//     setTimeout(() => {
-//       dispatch(action)
-//     }, 500)
-//   }
-// }

@@ -27,6 +27,7 @@ html {
         img {
             width: 32px;
         }
+
         margin: 0;
         // background: yellow;
         position: absolute;
@@ -41,4 +42,30 @@ html {
     min-height: 300px;
     position: relative;
 
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+    margin: 10px 0 10px 0;
+    li {
+        display: inline-block;
+        background: darken(white, 5%);
+        margin: 0 5px;
+
+        &.active {
+            a {
+                background: darken(white, 8%);
+            }
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+        }
+    }
 }

@@ -3,9 +3,10 @@ import React, { useCallback, useEffect } from 'react'
 import Header from './components/Header'
 import Table from './components/Table'
 import { useSelector, useDispatch } from "react-redux"
-import { getRepositories, setKeyword, setLanguage } from "./store/actionCreators"
+import { getRepositories, setKeyword, setLanguage, setQueryString } from "./store/actionCreators"
 import { Dispatch } from "redux"
 import * as _ from "lodash";
+import Pagination from "react-js-pagination";
 
 import LoadingGif from './styles/images/loading.gif'
 import './styles/styles.scss'
@@ -13,7 +14,7 @@ import './styles/styles.scss'
 function App() {
 
   const repositories = useSelector((state: RepositoryState) => state)
-  const { loading, data, keyword, languages, selectedLanguage } = repositories
+  const { loading, data, keyword, languages, selectedLanguage, queryString, total } = repositories
 
   const dispatch: Dispatch<any> = useDispatch()
 
@@ -41,6 +42,18 @@ function App() {
     getRepos()
   }
 
+  const handleOnChangePagination = (page: number): void => {
+    dispatch(setQueryString({ property: 'page', value: page }))
+    getRepos()
+  }
+
+  const handlerOnClickColumns = (column: any): void => {
+    dispatch(setQueryString({ property: 'page', value: 1 }))
+    dispatch(setQueryString({ property: 'sort', value: column }))
+    dispatch(setQueryString({ property: 'order', value: queryString.order === 'desc' ? 'asc' : 'desc' }))
+    getRepos()
+  }
+
   return (
     <div className='container'>
       <Header
@@ -54,7 +67,16 @@ function App() {
         {loading && <div className={`loading`}>
           <div><img alt='loading' src={LoadingGif} /></div>
         </div>}
-        <Table rows={data} />
+        <Table rows={data} onClickColumn={handlerOnClickColumns} order={queryString.order} selectedColumnOrder={queryString.sort} />
+        <Pagination
+          activePage={queryString.page}
+          itemsCountPerPage={queryString.per_page}
+          totalItemsCount={total}
+          pageRangeDisplayed={10}
+          onChange={handleOnChangePagination}
+          nextPageText='next'
+          prevPageText='prev'
+        />
       </div>
     </div>
   )

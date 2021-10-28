@@ -32,6 +32,8 @@ type RepositoryState = {
   languages: Array<string>
   selectedLanguage: String<Languages>
   loading: boolean
+  queryString:any
+  total: number
 }
 
 type HeaderType = {
@@ -44,4 +46,7 @@ type HeaderType = {
 
 type TableType = {
   rows: Array<any>
+  onClickColumn: Function
+  order: string
+  selectedColumnOrder: string
 }

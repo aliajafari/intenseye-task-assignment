@@ -11,8 +11,6 @@ const store: Store<any, any> & {
   dispatch: any
 } = createStore(reducer, applyMiddleware(thunk))
 
-console.log('store',store)
-
 const rootElement = document.getElementById("root")
 render(
   <Provider store={store}>
