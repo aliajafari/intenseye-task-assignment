@@ -8,7 +8,7 @@ const initialState: RepositoryState = {
   queryString: {
     q: undefined,
     page: 1,
-    per_page: 30,
+    per_page: 15,
     order: 'desc',
     sort: 'updated'
   },

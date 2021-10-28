@@ -68,16 +68,17 @@ function App() {
           <div><img alt='loading' src={LoadingGif} /></div>
         </div>}
         <Table rows={data} onClickColumn={handlerOnClickColumns} order={queryString.order} selectedColumnOrder={queryString.sort} />
-        <Pagination
-          activePage={queryString.page}
-          itemsCountPerPage={queryString.per_page}
-          totalItemsCount={total}
-          pageRangeDisplayed={10}
-          onChange={handleOnChangePagination}
-          nextPageText='next'
-          prevPageText='prev'
-        />
+
       </div>
+      <Pagination
+        activePage={queryString.page}
+        itemsCountPerPage={queryString.per_page}
+        totalItemsCount={total}
+        pageRangeDisplayed={10}
+        onChange={handleOnChangePagination}
+        nextPageText='next'
+        prevPageText='prev'
+      />
     </div>
   )
 }

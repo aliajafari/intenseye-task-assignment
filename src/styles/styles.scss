@@ -41,7 +41,8 @@ html {
 .table-container {
     min-height: 300px;
     position: relative;
-
+    overflow-x: scroll;
+    width: 100%;
 }
 
 .pagination {
